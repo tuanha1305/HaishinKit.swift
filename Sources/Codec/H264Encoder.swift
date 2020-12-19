@@ -179,7 +179,7 @@ public final class H264Encoder {
         ]
 #if os(OSX)
         if enabledHardwareEncoder {
-            properties[kVTVideoEncoderSpecification_EncoderID] = "com.apple.videotoolbox.videoencoder.h264.gva" as NSObject
+            properties[kVTVideoEncoderSpecification_EncoderID] = "com.apple.videotoolbox.videoencoder.ave.avc" as NSObject
             properties["EnableHardwareAcceleratedVideoEncoder"] = kCFBooleanTrue
             properties["RequireHardwareAcceleratedVideoEncoder"] = kCFBooleanTrue
         }
@@ -201,7 +201,7 @@ public final class H264Encoder {
             return
         }
         // 2. encoded sample buffer info.
-        print(sampleBuffer)
+        // print(sampleBuffer)
         let encoder: H264Encoder = Unmanaged<H264Encoder>.fromOpaque(refcon).takeUnretainedValue()
         encoder.formatDescription = CMSampleBufferGetFormatDescription(sampleBuffer)
         encoder.delegate?.sampleOutput(video: sampleBuffer)

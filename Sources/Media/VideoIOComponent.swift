@@ -408,7 +408,7 @@ extension VideoIOComponent {
     func encodeSampleBuffer(_ sampleBuffer: CMSampleBuffer) {
         
         // 1. raw sample buffer info.
-        print(sampleBuffer)
+        // print(sampleBuffer)
 
         guard let buffer: CVImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
